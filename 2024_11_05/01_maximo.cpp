@@ -36,12 +36,20 @@ bool buscarValor(vector<float> v, float valor) {
 
 int main () {
   vector<float> nums{1,2,3,4,5,100,6,7,8,9,0};
-  float maximo, minimo;
+  float maximo, minimo, valor = 1;
   
   maximo = encontrarMaximo(nums);
   minimo = encontrarMinimo(nums);
 
   cout << "El maximo es: " << maximo << endl; 
   cout << "El minimo es: " << minimo << endl; 
+  
+  if (buscarValor(nums, valor)) {
+    cout << "Si se encuentra " << valor << endl;
+  } else {
+    cout << "No se encuentra " << valor << endl;
+  }
 
+  string mensaje = (buscarValor(nums,valor))? "Si existe": "No existe";
+  cout << mensaje << " el valor " << valor << endl;
 }
